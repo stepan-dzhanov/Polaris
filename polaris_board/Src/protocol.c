@@ -40,28 +40,38 @@ void StartExchange(){
 
 void ON_LineControlCH1(){
    if ( (_status_ch1)&&(GetTimerCH1()>0)  ){
-       if(RunCH1(_current_ch1, 0, 0)==NO_CONTACT_CH)     {
+       if(RunCH1(_current_ch1, 0, 2)==NO_CONTACT_CH)     {
          StopTimerCH1();
        }
        else StartTimerCH1();
    }
      if ( (_status_ch1)&&(GetTimerCH1()==0)  ){
-       RunCH1(0, 0, 0);
+       RunCH1(0, 1, 2);
        //end_ch1=1;
      }
-   if ( (!_status_ch1)&&(GetTimerCH1()==0)  ){
-       RunCH1(0, 0, 0);
+   if ( (!_status_ch1)&&(GetTimerCH1()>0)  ){
+       RunCH1(0, 1, 2);
        
-     }
+   }
     
-     if ( (!_status_ch1)&&(GetTimerCH1()>0)  ){
-       StopTimerCH1();
-       RunCH1(_current_ch1, 1, 0);
-     }
+     
 }
 
 void ON_LineControlCH2(){
-  ;
+    if ( (_status_ch2)&&(GetTimerCH2()>0)  ){
+       if(RunCH2(_current_ch2, 0, 2)==NO_CONTACT_CH)     {
+         StopTimerCH2();
+       }
+       else StartTimerCH2();
+   }
+     if ( (_status_ch2)&&(GetTimerCH2()==0)  ){
+       RunCH2(0, 1, 2);
+       //end_ch1=1;
+     }
+   if ( (!_status_ch2)&&(GetTimerCH2()>0)  ){
+       RunCH2(0, 1, 2);
+       
+   }
 }
 
 
@@ -85,6 +95,10 @@ int EventProcessing(){
   static char old_status_ch1=0;
   static char old_status_ch2=0;
   int temp;
+  //sprintf(tx, "Test message");
+ // HAL_UART_Transmit(&huart4, tx, 11, 10);
+  //return 0;
+  
   
   if(ready)  {
     t_status_ch1 = RxData[1];
@@ -100,7 +114,7 @@ int EventProcessing(){
     t_current_ch2 = RxData[8];
     t_current_ch2 = t_current_ch2<<8;
     t_current_ch2 |= RxData[9];
-   // for(temp=0;temp<sizeof(RxData);temp++) RxData[temp]=0;   
+   //////////////////////////////////////////////
     _status_ch1=t_status_ch1;
     _current_ch1=t_current_ch1;
     if((!old_status_ch1)&&(t_status_ch1)){
@@ -118,6 +132,24 @@ int EventProcessing(){
       old_status_ch1 = 0;   
       //ResetTimerCH1();
     }
+    /////////////////////////////////////////////
+     _status_ch2=t_status_ch2;
+    _current_ch2=t_current_ch2;
+    if((!old_status_ch2)&&(t_status_ch2)){
+      _anode_ch2=t_anode_ch2;
+      _status_ch2=t_status_ch2;
+      _current_ch2=t_current_ch2;
+      _time_ch2=t_time_ch2;
+      end_ch2=0;
+      old_status_ch2 = 1;
+      SetTimerCH2(1*t_time_ch2);
+      StartTimerCH2();
+      
+    }
+    if((old_status_ch2)&&(!t_status_ch2)) {
+      old_status_ch2 = 0;   
+      //ResetTimerCH1();
+    }
     
     
     
@@ -126,12 +158,11 @@ int EventProcessing(){
     tx[0] = (char)tm;
     tm = GetTimerCH2();
     tx[3] = (char)tm;
-    tx[1] = (char)(GetADC1()/100);//Voltage1_1
-    tx[2] = 0;//Voltage1_2
-    tx[4] = 0;//Voltage2_1
-    tx[5] = 0;//Voltage2_2
-    if(bat)tx[6] = 75;//Battery
-    else tx[6] = 82;
+    tx[1] = (char)(GetADC1()/10);//Voltage1_1
+    tx[2] = (char)(GetADC11()/10);
+    tx[4] = (char)(GetADC2()/10);
+    tx[5] = (char)(GetADC21()/10);
+    tx[6] = (char)(GetBatteryVoltage()*10);//Battery
     tx[7] = end_ch1;//end procedure1
     tx[8] = end_ch2;//end procedure1
     
@@ -145,9 +176,8 @@ int EventProcessing(){
     
   }
    ON_LineControlCH1();
-  return 1;
-   //ON_LineControlCH2();
-  
+   ON_LineControlCH2();
+   return 1;
   
   
   
@@ -209,12 +239,12 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     GPIO_InitStruct.Alternate = GPIO_AF8_UART4;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_11;
+    GPIO_InitStruct.Pin = GPIO_PIN_1;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_PULLUP;
     GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF8_UART4;
-    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* Peripheral interrupt init*/
     HAL_NVIC_SetPriority(UART4_IRQn, 0, 0);
@@ -244,7 +274,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0);
 
-    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_11);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
 
     /* Peripheral interrupt DeInit*/
     HAL_NVIC_DisableIRQ(UART4_IRQn);

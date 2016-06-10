@@ -376,6 +376,12 @@ void PCMenu() {
    char pointer[] = {0,RETURN,RETURN};
    int tm; 
    HAL_GPIO_WritePin( RES_BL_GPIO_Port, RES_BL_Pin, GPIO_PIN_SET);
+   
+   ON_CH1();
+   HAL_Delay(500);
+   ON_CH2();
+   SET_AN_RES1
+   SET_AN_RES2
    StartExchange();
    ResetEncoderPosition();
    
@@ -400,6 +406,7 @@ void PCMenu() {
          ResetEncoderPosition();
          StopTimerCH1();
          RunCH1(0, 1, 0);
+         RunCH2(0, 1, 0);
          StopExchange();
          HAL_GPIO_WritePin( RES_BL_GPIO_Port, RES_BL_Pin, GPIO_PIN_RESET);
          return;
