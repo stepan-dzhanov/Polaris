@@ -1,16 +1,16 @@
-"D:\polaris_board\polaris_board\Src\menu.c"
+"D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Src\menu.c"
 -std=c99
 -ferror-limit=100
 -I
-D:\polaris_board\polaris_board\EWARM/../Inc
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM/../Inc
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Include
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Include
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -I
@@ -18,15 +18,15 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-D:\polaris_board\polaris_board\Inc
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Inc
 -I
-D:\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc
 -I
-D:\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
 -I
-D:\polaris_board\polaris_board\Drivers\CMSIS\Include
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Drivers\CMSIS\Include
 -I
-D:\polaris_board\polaris_board\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -DUSE_HAL_DRIVER=1
