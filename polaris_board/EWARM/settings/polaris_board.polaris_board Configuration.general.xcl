@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armstlink.dll" 
 
-"D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM\polaris_board Configuration\Exe\polaris_board Configuration.out" 
+"D:\polaris\Polaris\polaris_board\EWARM\polaris_board Configuration\Exe\polaris_board Configuration.out" 
 
 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armbat.dll" 
 

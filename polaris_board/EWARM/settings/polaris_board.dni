@@ -2,7 +2,7 @@
 stlinkserialNo=2798FD0D
 stlinkfoundProbes=
 [DebugChecksum]
-Checksum=-1521086871
+Checksum=-1504617218
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -68,7 +68,8 @@ SumSortOrder=0
 mode=0
 [Breakpoints2]
 Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f4xx_hal_msp.c}.263.6" 0 0 1 "" 0 "" 0
-Count=1
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\protocol.c}.139.7" 0 0 1 "" 0 "" 0
+Count=2
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

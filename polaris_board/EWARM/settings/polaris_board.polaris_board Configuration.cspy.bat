@@ -25,7 +25,7 @@ if not "%1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.general.xcl" --backend -f "D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\polaris\Polaris\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.general.xcl" --backend -f "D:\polaris\Polaris\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.general.xcl" "--debug_file=%1" --backend -f "D:\Dropbox\Полярис\Firmware\polaris_board\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\polaris\Polaris\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.general.xcl" "--debug_file=%1" --backend -f "D:\polaris\Polaris\polaris_board\EWARM\settings\polaris_board.polaris_board Configuration.driver.xcl" 
 
 @echo off 
 :end

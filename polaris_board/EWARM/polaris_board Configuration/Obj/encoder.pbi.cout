@@ -1,16 +1,16 @@
-"D:\polaris_board\polaris_board\Src\encoder.c"
+"D:\polaris\Polaris\polaris_board\Src\encoder.c"
 -std=c99
 -ferror-limit=100
 -I
-D:\polaris_board\polaris_board\EWARM/../Inc
+D:\polaris\Polaris\polaris_board\EWARM/../Inc
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
+D:\polaris\Polaris\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+D:\polaris\Polaris\polaris_board\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Include
+D:\polaris\Polaris\polaris_board\EWARM/../Drivers/CMSIS/Include
 -I
-D:\polaris_board\polaris_board\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+D:\polaris\Polaris\polaris_board\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -I
@@ -18,15 +18,15 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-D:\polaris_board\polaris_board\Inc
+D:\polaris\Polaris\polaris_board\Inc
 -I
-D:\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc
+D:\polaris\Polaris\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc
 -I
-D:\polaris_board\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
+D:\polaris\Polaris\polaris_board\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
 -I
-D:\polaris_board\polaris_board\Drivers\CMSIS\Include
+D:\polaris\Polaris\polaris_board\Drivers\CMSIS\Include
 -I
-D:\polaris_board\polaris_board\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+D:\polaris\Polaris\polaris_board\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -DUSE_HAL_DRIVER=1
